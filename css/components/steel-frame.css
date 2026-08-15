@@ -1,0 +1,230 @@
+/* ==========================================================================
+   SECCIÓN STEEL FRAME (SHOWCASE ARQUITECTÓNICO CON DORADO OFICIAL #E2B857)
+   ========================================================================== */
+
+.section-steel-showcase {
+  background-color: #F8FAFC;
+  padding: 6rem 0;
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid #E2E8F0;
+  border-bottom: 1px solid #E2E8F0;
+}
+
+/* Header de la sección */
+.steel-header {
+  margin-bottom: 3.5rem;
+  max-width: 800px;
+}
+
+.steel-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.steel-tag .tag-line {
+  width: 24px;
+  height: 2px;
+  background-color: #E2B857; /* Dorado Oficial AIP */
+}
+
+.steel-tag .tag-text {
+  font-family: var(--font-heading);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: #E2B857;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.steel-main-title {
+  font-size: clamp(2.2rem, 3.5vw, 3rem);
+  font-weight: 800;
+  color: #091A36;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.25rem;
+}
+
+.steel-main-title .highlight-gold {
+  color: #E2B857;
+}
+
+.steel-main-subtitle {
+  font-size: 1.1rem;
+  color: #475569;
+  line-height: 1.65;
+  max-width: 680px;
+}
+
+/* Grid Showcase de 2 Columnas */
+.steel-showcase-grid {
+  display: grid;
+  grid-template-columns: 46% 54%;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+/* Columna Izquierda: Marco Fotográfico */
+.steel-photo-col {
+  width: 100%;
+}
+
+.steel-photo-wrapper {
+  position: relative;
+  width: 100%;
+  height: 520px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 2px solid #E2B857;
+  box-shadow: 0 20px 45px rgba(9, 26, 54, 0.12);
+}
+
+.steel-photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.steel-photo-wrapper:hover .steel-photo-img {
+  transform: scale(1.03);
+}
+
+.steel-photo-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(9, 26, 54, 0.02) 0%, rgba(9, 26, 54, 0.45) 100%);
+}
+
+/* Badge Flotante sobre la Foto */
+.steel-floating-badge {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  right: 1.5rem;
+  background: #FFFFFF;
+  border-left: 4px solid #E2B857;
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  box-shadow: 0 15px 35px rgba(9, 26, 54, 0.18);
+}
+
+.badge-number {
+  font-family: var(--font-heading);
+  font-size: 2.75rem;
+  font-weight: 800;
+  color: #E2B857;
+  line-height: 1;
+}
+
+.badge-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.badge-info strong {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #091A36;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.badge-info span {
+  font-size: 0.85rem;
+  color: #5A6578;
+  font-weight: 500;
+}
+
+/* Columna Derecha: 4 Pilares Técnicos en Tarjetas Blancas Elevadas */
+.steel-pillars-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.steel-pillar-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.35rem;
+  padding: 1.35rem 1.6rem;
+  background: #FFFFFF;
+  border-radius: 12px;
+  border: 1px solid #E2E8F0;
+  border-left: 4px solid #E2B857;
+  box-shadow: 0 8px 20px rgba(9, 26, 54, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.steel-pillar-card:hover {
+  transform: translateX(6px);
+  box-shadow: 0 14px 30px rgba(9, 26, 54, 0.1);
+  border-color: #CBD5E1;
+  border-left-color: #091A36;
+}
+
+.pillar-num {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #E2B857;
+  line-height: 1;
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+}
+
+.pillar-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.pillar-title {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #091A36;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.pillar-desc {
+  font-size: 0.925rem;
+  color: #475569;
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .steel-showcase-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .steel-photo-wrapper {
+    height: 400px;
+  }
+}
+
+@media (max-width: 576px) {
+  .steel-floating-badge {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 1rem 1.25rem;
+  }
+
+  .badge-number {
+    font-size: 2.2rem;
+  }
+}

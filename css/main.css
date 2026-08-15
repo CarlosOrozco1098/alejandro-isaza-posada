@@ -1,0 +1,307 @@
+/* ==========================================================================
+   A.I.P STEEL SOLUCIONES — ALEJANDRO ISAZA POSADA
+   SISTEMA VANGUARDISTA DE DISEÑO ARQUITECTÓNICO CORPORATIVO
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: var(--line-height-normal);
+  color: var(--color-slate-dark);
+  background-color: var(--bg-surface-light);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+ul {
+  list-style: none;
+}
+
+/* Layout Utilities */
+.container {
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.container-wide {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.section {
+  padding: var(--section-padding-desktop);
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: var(--section-padding-mobile);
+  }
+}
+
+/* Estilos de Botones Globales con Alto Valor Visual */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 0.85rem 1.75rem;
+  border-radius: var(--border-radius-full);
+  cursor: pointer;
+  border: 1.5px solid transparent;
+  transition: var(--transition-normal);
+  text-align: center;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--color-primary-navy) 0%, var(--color-navy-dark) 100%);
+  color: #FFFFFF;
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  background: var(--color-navy-dark);
+}
+
+.btn-quote {
+  background: linear-gradient(135deg, var(--accent-gold) 0%, #B38628 100%);
+  color: var(--color-primary-navy);
+  font-weight: 800;
+  box-shadow: 0 4px 14px rgba(226, 184, 87, 0.35);
+}
+
+.btn-quote:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(226, 184, 87, 0.5);
+  background: linear-gradient(135deg, #FADB7F 0%, var(--accent-gold) 100%);
+}
+
+.btn-secondary-clean {
+  background: #FFFFFF;
+  color: var(--color-primary-navy);
+  border: 1.5px solid #CBD5E1;
+}
+
+.btn-secondary-clean:hover {
+  border-color: var(--color-primary-navy);
+  background: #F8FAFC;
+  transform: translateY(-2px);
+}
+
+.btn-whatsapp {
+  background-color: #25D366;
+  color: #FFFFFF;
+  font-weight: 700;
+}
+
+.btn-whatsapp:hover {
+  background-color: #1EBE5D;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(37, 211, 102, 0.3);
+}
+
+/* Sección Oscura de Alto Impacto para Steel Frame y Diferenciales */
+.section-navy-premium {
+  background: linear-gradient(135deg, #091A36 0%, #061124 100%);
+  color: #FFFFFF;
+  position: relative;
+  overflow: hidden;
+}
+
+.section-navy-premium::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 80% 20%, rgba(226, 184, 87, 0.12) 0%, transparent 40%),
+              radial-gradient(circle at 20% 80%, rgba(37, 99, 235, 0.15) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.section-navy-premium h2,
+.section-navy-premium h3,
+.section-navy-premium h4 {
+  color: #FFFFFF;
+}
+
+.section-navy-premium p {
+  color: #CBD5E1;
+}
+
+/* Encabezados de Sección */
+.section-header {
+  text-align: center;
+  max-width: 750px;
+  margin: 0 auto 3.75rem auto;
+}
+
+.section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 1.25rem;
+  border-radius: var(--border-radius-full);
+  background: rgba(9, 26, 54, 0.08);
+  color: var(--color-primary-navy);
+  font-family: var(--font-heading);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.section-navy-premium .section-badge {
+  background: rgba(226, 184, 87, 0.15);
+  color: var(--accent-gold);
+  border: 1px solid rgba(226, 184, 87, 0.3);
+}
+
+.section-title {
+  font-size: var(--font-size-h2);
+  font-weight: 800;
+  color: var(--color-primary-navy);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: var(--color-steel-grey);
+  line-height: 1.6;
+}
+
+/* Sección Clara de Fondo */
+.section-white {
+  background-color: #FFFFFF;
+}
+
+.section-slate {
+  background-color: var(--bg-surface-light);
+}
+
+/* --------------------------------------------------------------------------
+   FRANJA COMPACTA "¿POR QUÉ ELEGIRNOS?" (REDUCIDA Y ELEGANTE ESTILO COMPROMISO)
+   -------------------------------------------------------------------------- */
+.why-choose-banner {
+  width: 100%;
+  background-color: #091A36;
+  position: relative;
+  overflow: hidden;
+  padding: 2.25rem 0;
+  border-top: 1px solid rgba(226, 184, 87, 0.4);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.why-banner-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  position: relative;
+  z-index: 2;
+  box-sizing: border-box;
+}
+
+.why-choose-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.5rem;
+  width: 100%;
+}
+
+.why-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+}
+
+.why-col:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 10%;
+  right: -1.25rem;
+  width: 1px;
+  height: 80%;
+  background-color: rgba(226, 184, 87, 0.25);
+}
+
+.why-num {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #E2B857;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.65rem;
+}
+
+.why-title {
+  font-family: var(--font-heading);
+  font-size: 1.025rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+  line-height: 1.3;
+}
+
+.why-desc {
+  font-size: 0.875rem;
+  color: #CBD5E1;
+  line-height: 1.5;
+  margin: 0;
+}
+
+@media (max-width: 992px) {
+  .why-choose-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  .why-col:not(:last-child)::after {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .why-choose-row {
+    grid-template-columns: 1fr;
+  }
+}

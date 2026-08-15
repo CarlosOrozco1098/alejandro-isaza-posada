@@ -1,0 +1,355 @@
+/* ==========================================================================
+   PORTAFOLIO POR CATEGORÍA CON GALERÍA MULTI-FOTO INTERNA DENTRO DE CADA PROYECTO
+   ========================================================================== */
+
+.section-portfolio-premium {
+  background-color: #F8FAFC;
+  padding: 4.5rem 0 5rem;
+  position: relative;
+  border-top: 1px solid #E2E8F0;
+  border-bottom: 1px solid #E2E8F0;
+}
+
+/* Header Sobrio */
+.portfolio-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 2.5rem;
+}
+
+.portfolio-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.portfolio-tag .tag-line {
+  width: 24px;
+  height: 2px;
+  background-color: var(--accent-gold);
+}
+
+.portfolio-tag .tag-text {
+  font-family: var(--font-heading);
+  font-size: 0.8125rem;
+  font-weight: 800;
+  color: #B38628;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.portfolio-main-title {
+  font-size: clamp(2rem, 3.2vw, 2.6rem);
+  font-weight: 800;
+  color: #091A36;
+  line-height: 1.2;
+  margin-bottom: 0.65rem;
+}
+
+.portfolio-main-subtitle {
+  font-size: 1.025rem;
+  color: #475569;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Navegación de Pestañas de Categoría */
+.portfolio-tabs-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-bottom: 2.75rem;
+}
+
+.portfolio-tab-btn {
+  font-family: var(--font-heading);
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #475569;
+  background: #FFFFFF;
+  border: 1.5px solid #CBD5E1;
+  padding: 0.7rem 1.4rem;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  transition: all 0.25s ease;
+}
+
+.portfolio-tab-btn:hover {
+  background: #F1F5F9;
+  color: #091A36;
+  border-color: #091A36;
+  transform: translateY(-2px);
+}
+
+.portfolio-tab-btn.active {
+  background: #091A36;
+  color: #FFFFFF;
+  border-color: #091A36;
+  box-shadow: 0 6px 18px rgba(9, 26, 54, 0.25);
+}
+
+/* Vistas por Categoría (Se muestra 1 categoría a la vez) */
+.portfolio-category-view {
+  display: none;
+  width: 100%;
+}
+
+.portfolio-category-view.active {
+  display: block;
+}
+
+/* Tarjeta Única del Proyecto por Servicio */
+.portfolio-single-project-card {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: 3.5rem;
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 24px;
+  padding: 3rem 3.25rem;
+  align-items: center;
+  box-shadow: 0 16px 42px rgba(9, 26, 54, 0.08);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Columna Izquierda: Galería de Fotos del Mismo Proyecto */
+.project-gallery-col {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.project-gallery-frame {
+  position: relative;
+  width: 100%;
+  height: 420px;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #091A36;
+  border: 1px solid #CBD5E1;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+.gallery-track {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.45s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.gallery-slide {
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100%;
+}
+
+/* Restablecido a object-fit: cover sin márgenes internos */
+.gallery-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* Ajustes de encuadre específico para fotos verticales de impermeabilización */
+.gallery-photo.focus-top {
+  object-position: center 15%;
+}
+
+.gallery-photo.focus-high {
+  object-position: center 25%;
+}
+
+/* Flechas Internas del Marco Fotográfico */
+.gallery-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(9, 26, 54, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #E2B857;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  z-index: 5;
+}
+
+.gallery-arrow.prev {
+  left: 0.85rem;
+}
+
+.gallery-arrow.next {
+  right: 0.85rem;
+}
+
+.gallery-arrow:hover {
+  background: #E2B857;
+  color: #091A36;
+  border-color: #E2B857;
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.gallery-arrow:active {
+  transform: translateY(-50%) scale(1);
+}
+
+/* Indicador Badge de Foto dentro del Marco */
+.gallery-counter-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #091A36;
+  background: #FADB7F;
+  padding: 0.35rem 0.85rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  z-index: 5;
+}
+
+/* Puntos de Navegación debajo del Marco Fotográfico */
+.gallery-dots-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.25rem;
+}
+
+.g-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #CBD5E1;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.g-dot.active {
+  width: 26px;
+  border-radius: 10px;
+  background: #091A36;
+}
+
+/* Columna Derecha: Información del Proyecto */
+.project-details-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  min-width: 0;
+}
+
+.project-category-tag {
+  font-family: var(--font-heading);
+  font-size: 0.78125rem;
+  font-weight: 800;
+  color: #B38628;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.project-title {
+  font-size: clamp(1.6rem, 2.4vw, 2.2rem);
+  font-weight: 800;
+  color: #091A36;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.project-desc {
+  font-size: 1.025rem;
+  color: #475569;
+  line-height: 1.65;
+  margin-bottom: 1.75rem;
+}
+
+/* Cuadrícula de Especificaciones */
+.project-specs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.85rem 1.25rem;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.spec-box {
+  background: #F1F5F9;
+  border: 1px solid #E2E8F0;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.spec-label {
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #64748B;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.spec-value {
+  font-family: var(--font-heading);
+  font-size: 0.925rem;
+  font-weight: 800;
+  color: #091A36;
+}
+
+.project-action-box {
+  width: 100%;
+}
+
+.project-action-box .btn {
+  width: 100%;
+  padding: 1.05rem 2rem;
+  font-size: 1rem;
+  justify-content: center;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .portfolio-single-project-card {
+    grid-template-columns: 1fr;
+    gap: 2.25rem;
+    padding: 2.25rem 1.75rem;
+  }
+
+  .project-gallery-frame {
+    height: 320px;
+  }
+
+  .project-specs-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .portfolio-single-project-card {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .project-title {
+    font-size: 1.4rem;
+  }
+}

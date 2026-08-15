@@ -1,0 +1,538 @@
+/* ==========================================================================
+   DISEÑO RESPONSIVO Y BREAKPOINTS MÓVILES (OFICIAL A.I.P)
+   ==========================================================================
+   REGLA DE ORO: DESKTOP (>= 992px) SE MANTIENE 100% INTACTO SIN CAMBIOS.
+   TODOS LOS AJUSTES RESPONSIVOS ESTÁN ESTRICTAMENTE ENCAPSULADOS EN MEDIA QUERIES.
+   ========================================================================== */
+
+/* Prevenir scroll horizontal global en cualquier resolución */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden !important;
+}
+
+/* Ocultar elementos exclusivamente móviles en versión de escritorio */
+@media (min-width: 769px) {
+  .process-mobile-cta-wrapper {
+    display: none !important;
+  }
+}
+
+/* ==========================================================================
+   BREAKPOINT TABLETS Y PANTALLAS MEDIANAS (max-width: 991px)
+   ========================================================================== */
+@media (max-width: 991px) {
+  
+  /* --- HEADER & MENÚ MÓVIL --- */
+  :root {
+    --header-height: 72px;
+  }
+
+  .header {
+    height: var(--header-height);
+  }
+
+  .header .container {
+    padding: 0 1.25rem;
+  }
+
+  .logo-img {
+    height: 48px;
+    width: auto;
+  }
+
+  .mobile-toggle {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(226, 184, 87, 0.3);
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    width: 100%;
+    height: calc(100vh - var(--header-height));
+    background: rgba(6, 17, 36, 0.98);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1.5rem;
+    padding: 3rem 1.5rem 2rem;
+    transform: translateX(100%);
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 999;
+    overflow-y: auto;
+    border-top: 1px solid rgba(226, 184, 87, 0.2);
+  }
+
+  .nav-menu.active {
+    transform: translateX(0);
+  }
+
+  .nav-link {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #F8FAFC;
+    padding: 0.5rem 1rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  .btn-nav-cta {
+    display: none;
+  }
+
+  body.menu-open {
+    overflow: hidden !important;
+  }
+
+  /* --- HERO SECTION --- */
+  .hero {
+    margin-top: var(--header-height);
+    padding: 3.5rem 0 3rem;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .hero-title {
+    font-size: 2.25rem;
+    line-height: 1.25;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  /* --- QUIÉNES SOMOS & ABOUT --- */
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .pillars-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  /* --- STEEL FRAME --- */
+  .steel-frame-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .steel-frame-features-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  /* --- SERVICIOS SHOWCASE EN MÓVIL --- */
+  .dark-card-inner {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .dark-slide-card {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+    padding: 1.5rem !important;
+    min-height: auto !important;
+  }
+
+  .dark-photo-wrapper {
+    height: 220px !important;
+  }
+
+  .dark-card-title {
+    font-size: 1.5rem;
+  }
+
+  /* FLECHAS DE NAVEGACIÓN DE SERVICIOS ALINEADAS EN MÓVIL */
+  .services-dark-stage {
+    position: relative !important;
+  }
+
+  .dark-arrow-btn.side-arrow.prev,
+  .dark-arrow-btn.side-arrow.next {
+    position: absolute !important;
+    top: 125px !important;
+    transform: translateY(-50%) !important;
+    width: 38px !important;
+    height: 38px !important;
+    min-width: 38px !important;
+    min-height: 38px !important;
+    border-radius: 50% !important;
+    background: rgba(6, 17, 36, 0.85) !important;
+    border: 1px solid rgba(226, 184, 87, 0.5) !important;
+    color: #E2B857 !important;
+    opacity: 0.85 !important;
+    z-index: 25 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
+  }
+
+  .dark-arrow-btn.side-arrow.prev {
+    left: 8px !important;
+    right: auto !important;
+  }
+
+  .dark-arrow-btn.side-arrow.next {
+    right: 8px !important;
+    left: auto !important;
+  }
+
+  .dark-arrow-btn.side-arrow svg {
+    width: 20px !important;
+    height: 20px !important;
+  }
+
+  /* --- CONTACTO & FOOTER --- */
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+}
+
+/* ==========================================================================
+   BREAKPOINT CELULARES ESTÁNDAR Y GRANDES (max-width: 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+
+  /* --- GLOBAL PADDING & SECCIONES --- */
+  .section {
+    padding: 3.5rem 0;
+  }
+
+  .container {
+    padding: 0 1.25rem;
+  }
+
+  .container-wide {
+    width: 100%;
+    padding: 0 1rem;
+  }
+
+  /* --- RESPONSIVE DE BOTONES Y CTAS EN CELULAR --- */
+  .btn,
+  .btn-primary,
+  .btn-accent,
+  .btn-nav-cta,
+  .dark-card-btn,
+  .hero-actions .btn,
+  .dark-card-footer .btn,
+  button[type="submit"],
+  .btn-submit {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 48px !important;
+    padding: 0.75rem 1rem !important;
+    font-size: 0.875rem !important;
+    font-weight: 700 !important;
+    line-height: 1.35 !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+    text-align: center !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  /* --- TITULARES Y TEXTOS --- */
+  .section-title {
+    font-size: 1.75rem;
+    line-height: 1.25;
+  }
+
+  .section-subtitle {
+    font-size: 0.95rem;
+  }
+
+  /* --- HERO --- */
+  .hero-title {
+    font-size: 1.95rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    gap: 0.85rem;
+    width: 100%;
+  }
+
+  .hero-stats-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  /* --- ABOUT & PILARES --- */
+  .pillars-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  /* --- STEEL FRAME --- */
+  .steel-frame-features-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .steel-frame-compare-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* --- SERVICIOS SHOWCASE --- */
+  .services-dark-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .dark-card-bullets {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .dark-card-footer {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: stretch;
+  }
+
+  /* ==========================================================================
+     METODOLOGÍA DE TRABAJO EN MÓVIL (CARRUSEL 1 PASO A LA VEZ + FLECHAS + WHATSAPP)
+     ========================================================================== */
+  .section-process-fullbleed {
+    padding-bottom: 2rem !important;
+  }
+
+  .process-slider-stage {
+    position: relative !important;
+    width: 100% !important;
+    overflow: hidden !important;
+    padding-bottom: 3.25rem !important; /* Espacio para las flechas centradas abajo */
+  }
+
+  .process-slider-track {
+    display: flex !important;
+    flex-direction: row !important;
+    width: 600% !important; /* 6 Pasos x 100% de pantalla cada uno */
+    transform: translateX(0%);
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1) !important;
+  }
+
+  .process-full-slide {
+    flex: 0 0 16.6666% !important; /* 1/6 del track = 100% de la pantalla del celular */
+    width: 16.6666% !important;
+    height: 440px !important;
+    border-right: none !important;
+    box-sizing: border-box !important;
+    position: relative !important;
+  }
+
+  .full-slide-content {
+    padding: 2rem 1.25rem !important;
+  }
+
+  .full-slide-title {
+    font-size: 1.35rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .full-slide-desc {
+    font-size: 0.875rem !important;
+    margin-bottom: 1rem !important;
+    max-width: 100% !important;
+  }
+
+  /* Ocultar botones "VER MÁS" individuales dentro de cada paso en celular */
+  .process-full-slide .full-slide-btn {
+    display: none !important;
+  }
+
+  /* Flechas de Navegación del Proceso en Celular (Centradas Abajo) */
+  .process-nav-arrow.prev,
+  .process-nav-arrow.next {
+    display: flex !important;
+    position: absolute !important;
+    bottom: 0.15rem !important;
+    top: auto !important;
+    transform: none !important;
+    width: 44px !important;
+    height: 44px !important;
+    border-radius: 50% !important;
+    background: rgba(6, 17, 36, 0.92) !important;
+    border: 1px solid rgba(226, 184, 87, 0.5) !important;
+    color: #E2B857 !important;
+    z-index: 20 !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: opacity 0.3s ease !important;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5) !important;
+  }
+
+  .process-nav-arrow.prev {
+    left: calc(50% - 54px) !important;
+    right: auto !important;
+  }
+
+  .process-nav-arrow.next {
+    left: calc(50% + 10px) !important;
+    right: auto !important;
+  }
+
+  .process-dots-wrapper {
+    display: none !important;
+  }
+
+  /* Botón Único de Cotización WhatsApp debajo del Carrusel de Proceso */
+  .process-mobile-cta-wrapper {
+    display: block !important;
+    width: 100% !important;
+    margin-top: 1rem !important;
+    padding: 0 1.25rem !important;
+    box-sizing: border-box !important;
+    text-align: center !important;
+  }
+
+  .process-mobile-cta {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 50px !important;
+    font-size: 0.95rem !important;
+    font-weight: 800 !important;
+    background: linear-gradient(135deg, #FADB7F 0%, #E2B857 100%) !important;
+    color: #091A36 !important;
+    border-radius: 30px !important;
+    border: 1px solid #FADB7F !important;
+    box-shadow: 0 6px 20px rgba(226, 184, 87, 0.4) !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-decoration: none !important;
+    letter-spacing: 0.06em !important;
+  }
+
+  /* --- PROYECTOS / PORTAFOLIO --- */
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .portfolio-card-img {
+    height: 220px;
+  }
+
+  .portfolio-tabs-nav {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .portfolio-tab-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* --- FORMULARIO Y ENTRADAS --- */
+  .contact-form {
+    padding: 1.5rem;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    font-size: 16px !important;
+    padding: 0.85rem 1rem;
+  }
+
+  /* --- FOOTER --- */
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  /* --- BOTÓN FLOTANTE WHATSAPP --- */
+  .whatsapp-float {
+    bottom: 1.25rem;
+    right: 1.25rem;
+    width: 54px;
+    height: 54px;
+    font-size: 1.75rem;
+    z-index: 998;
+  }
+
+  /* --- MODAL Y LIGHTBOX MÓVIL --- */
+  .modal-container {
+    width: 94%;
+    max-height: 90vh;
+    padding: 1.25rem;
+    margin: 1rem auto;
+  }
+
+  .modal-close-btn {
+    top: 0.75rem;
+    right: 0.75rem;
+    width: 38px;
+    height: 38px;
+    font-size: 1.35rem;
+  }
+}
+
+/* ==========================================================================
+   BREAKPOINT CELULARES PEQUEÑOS (max-width: 480px / 360px)
+   ========================================================================== */
+@media (max-width: 480px) {
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  .hero-title {
+    font-size: 1.75rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .brand-logo .logo-img {
+    height: 42px;
+  }
+
+  .hero-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .process-full-slide {
+    height: 410px !important;
+  }
+}

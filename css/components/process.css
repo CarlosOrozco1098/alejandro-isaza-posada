@@ -1,0 +1,295 @@
+/* ==========================================================================
+   PROCESO DE TRABAJO — FULL-BLEED 3 COLUMNAS CONTINUAS (ESTILO IMAGEN DE REFERENCIA)
+   ========================================================================== */
+
+.section-process-fullbleed {
+  background-color: #061124;
+  padding: 4.5rem 0 0;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Header Sobrio Centrado (Con Margen Estándar) */
+.process-fullbleed-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 3rem;
+  padding: 0 1.5rem;
+}
+
+.process-fullbleed-header .tag-gold {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.process-fullbleed-header .tag-line {
+  width: 28px;
+  height: 2px;
+  background-color: #E2B857;
+}
+
+.process-fullbleed-header .tag-text {
+  font-family: var(--font-heading);
+  font-size: 0.8125rem;
+  font-weight: 800;
+  color: #E2B857;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.process-fullbleed-header .main-title {
+  font-size: clamp(2.1rem, 3.4vw, 2.7rem);
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+}
+
+.process-fullbleed-header .main-subtitle {
+  font-size: 1.05rem;
+  color: #94A3B8;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Escenario del Slider Ancho Completo a los Borde de la Pantalla (0 Márgenes Lateral) */
+.process-slider-stage {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.process-slider-track {
+  display: flex;
+  width: 200%; /* 2 Páginas de 3 Columnas = 6 Tarjetas en Total */
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Cada Tarjeta Ocupa Exactamente el 33.333% del Ancho de la Pantalla en Desktop */
+.process-full-slide {
+  flex: 0 0 16.6666%; /* 100% / 6 = 16.6666% del track completo (que es 33.333% de la pantalla) */
+  width: 16.6666%;
+  height: 540px;
+  position: relative;
+  overflow: hidden;
+  border-right: 1px solid rgba(255, 255, 255, 0.15);
+  box-sizing: border-box;
+}
+
+.process-full-slide:last-child {
+  border-right: none;
+}
+
+/* Imagen de Fondo a Pantalla Completa dentro de la Columna */
+.full-slide-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+  z-index: 1;
+}
+
+.full-slide-bg.focus-top {
+  object-position: center 20%;
+}
+
+/* Capa de Degradado Oscuro idéntica a la Imagen de Referencia */
+.full-slide-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    180deg, 
+    rgba(6, 17, 36, 0.2) 0%, 
+    rgba(6, 17, 36, 0.65) 55%, 
+    rgba(4, 10, 22, 0.95) 100%
+  );
+  transition: background 0.4s ease;
+  z-index: 2;
+}
+
+/* Contenido Alineado en la Parte Inferior */
+.full-slide-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 3rem 2.5rem;
+  z-index: 3;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.full-slide-badge {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #E2B857;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.full-slide-title {
+  font-size: clamp(1.4rem, 1.8vw, 1.75rem);
+  font-weight: 800;
+  color: #FFFFFF;
+  margin-bottom: 0.75rem;
+  line-height: 1.25;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+}
+
+.full-slide-desc {
+  font-size: 0.95rem;
+  color: #CBD5E1;
+  line-height: 1.6;
+  margin-bottom: 1.75rem;
+  max-width: 90%;
+}
+
+/* Botón VER MÁS en Tono Dorado Metálico de Marca A.I.P Steel Soluciones */
+.full-slide-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-size: 0.8125rem;
+  font-weight: 800;
+  color: #091A36;
+  background: linear-gradient(135deg, #FADB7F 0%, #E2B857 100%);
+  padding: 0.75rem 2rem;
+  border-radius: 30px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: 0 6px 20px rgba(226, 184, 87, 0.4);
+  transition: all 0.3s ease;
+  border: 1px solid #FADB7F;
+}
+
+/* Hover Effects */
+.process-full-slide:hover .full-slide-bg {
+  transform: scale(1.08);
+}
+
+.process-full-slide:hover .full-slide-overlay {
+  background: linear-gradient(
+    180deg, 
+    rgba(6, 17, 36, 0.1) 0%, 
+    rgba(6, 17, 36, 0.55) 50%, 
+    rgba(4, 10, 22, 0.98) 100%
+  );
+}
+
+.process-full-slide:hover .full-slide-btn {
+  background: #FFFFFF;
+  color: #091A36;
+  border-color: #FFFFFF;
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.4);
+}
+
+/* Flechas de Navegación del Slider */
+.process-nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(6, 17, 36, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #E2B857;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+.process-nav-arrow.prev {
+  left: 1.5rem;
+}
+
+.process-nav-arrow.next {
+  right: 1.5rem;
+}
+
+.process-nav-arrow:hover {
+  background: #E2B857;
+  color: #061124;
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* Barra de Puntos del Slider en la Parte Inferior */
+.process-dots-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  padding: 1.75rem 0 2rem;
+  background: #061124;
+}
+
+.process-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #334155;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.process-dot.active {
+  width: 28px;
+  border-radius: 10px;
+  background: #E2B857;
+}
+
+/* Responsive: Adapta a 2 o 1 columna en pantallas reducidas */
+@media (max-width: 992px) {
+  .process-slider-track {
+    width: 300%; /* 3 Páginas de 2 Columnas */
+  }
+
+  .process-full-slide {
+    flex: 0 0 16.6666%;
+    width: 16.6666%;
+    height: 480px;
+  }
+
+  .full-slide-content {
+    padding: 2rem 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .process-slider-track {
+    width: 600%; /* 6 Páginas de 1 Columna */
+  }
+
+  .process-full-slide {
+    height: 440px;
+  }
+
+  .process-nav-arrow {
+    width: 42px;
+    height: 42px;
+  }
+}

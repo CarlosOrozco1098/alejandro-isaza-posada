@@ -1,0 +1,409 @@
+/* ==========================================================================
+   SERVICIOS SHOWCASE MONUMENTAL (CARD TIPO PÁGINA CASI COMPLETA + MAX PROTAGONISMO)
+   ========================================================================== */
+
+.section-services-dark {
+  background-color: #061124;
+  padding: 3.25rem 0 3.75rem; /* Sección ultra enfocada en la tarjeta */
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid rgba(226, 184, 87, 0.25);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Contenedor Maximizado (Casi todo el ancho disponible) */
+.container-wide {
+  max-width: 1440px;
+  width: 96%;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Header de la Sección Discreto y Compacto (Para dar 95% de relevancia a la Card) */
+.services-dark-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+  gap: 1.5rem;
+}
+
+.services-dark-header .header-left {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  max-width: none;
+}
+
+.dark-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0;
+}
+
+.dark-tag .tag-line {
+  width: 18px;
+  height: 2px;
+  background-color: #E2B857;
+}
+
+.dark-tag .tag-text {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #E2B857;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.dark-title {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1.2;
+  margin: 0;
+  display: inline-block;
+}
+
+.dark-subtitle {
+  display: none; /* Ocultamos el subtítulo largo para que la tarjeta sea 100% la protagonista */
+}
+
+/* Contador Sobrio */
+.dark-counter {
+  font-family: var(--font-heading);
+  display: flex;
+  align-items: baseline;
+  gap: 0.35rem;
+}
+
+.dark-counter .current-num {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #E2B857;
+  line-height: 1;
+}
+
+.dark-counter .total-sep {
+  font-size: 1.1rem;
+  color: #64748B;
+}
+
+.dark-counter .total-num {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #94A3B8;
+}
+
+/* Escenario con Flechas Flotantes Sueltas a los Costados */
+.services-dark-stage {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  position: relative;
+}
+
+/* Flechas Sueltas Transparentes */
+.dark-arrow-btn.side-arrow {
+  width: 52px;
+  height: 52px;
+  flex-shrink: 0;
+  background: transparent;
+  border: none;
+  color: #E2B857;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: none;
+  z-index: 10;
+  transition: transform 0.25s ease, opacity 0.25s ease, color 0.25s ease;
+  opacity: 0.85;
+  padding: 0;
+}
+
+.dark-arrow-btn.side-arrow:hover {
+  background: transparent;
+  color: #FADB7F;
+  border-color: transparent;
+  transform: scale(1.3);
+  box-shadow: none;
+  opacity: 1;
+}
+
+.dark-arrow-btn.side-arrow:active {
+  transform: scale(1.1);
+}
+
+/* Viewport y Track Ampliados al Máximo */
+.services-dark-viewport {
+  flex-grow: 1;
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
+  border-radius: 24px;
+}
+
+.services-dark-track {
+  display: flex;
+  width: 100%;
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.service-dark-slide {
+  flex: 0 0 100%;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  padding: 0.25rem;
+}
+
+/* Tarjeta Monumental Tipo Página Completa */
+.dark-slide-card {
+  display: grid;
+  grid-template-columns: 46% 54%;
+  gap: 3.5rem;
+  background: #0B1A33;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 24px;
+  padding: 3.5rem 4rem;
+  align-items: center;
+  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.5);
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  min-height: 520px;
+  box-sizing: border-box;
+}
+
+.dark-slide-card.protagonist-dark {
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 30px 64px rgba(0, 0, 0, 0.55);
+}
+
+.gold-star-banner {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #091A36;
+  background: #FADB7F;
+  padding: 0.4rem 1.1rem;
+  border-radius: 20px;
+  letter-spacing: 0.08em;
+  margin-bottom: 1.25rem;
+}
+
+/* Columna de Fotografía Real Monumental (Izquierda) */
+.dark-photo-col {
+  width: 100%;
+}
+
+.dark-photo-wrapper {
+  position: relative;
+  width: 100%;
+  height: 440px;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 20px 42px rgba(0, 0, 0, 0.4);
+  background-color: #091A36;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dark-photo-wrapper.gold-border {
+  border: 1px solid rgba(226, 184, 87, 0.4);
+}
+
+.dark-service-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.dark-service-photo.nilo-facade-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.dark-photo-wrapper:hover .dark-service-photo {
+  transform: scale(1.05);
+}
+
+.photo-overlay-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(6, 17, 36, 0.0) 0%, rgba(6, 17, 36, 0.22) 100%);
+  pointer-events: none;
+}
+
+.photo-number-badge {
+  position: absolute;
+  top: 1.25rem;
+  left: 1.25rem;
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  background: rgba(6, 17, 36, 0.85);
+  backdrop-filter: blur(8px);
+  padding: 0.45rem 0.95rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.photo-number-badge.gold-num {
+  color: #E2B857;
+  border-color: rgba(226, 184, 87, 0.4);
+}
+
+/* Columna de Contenido (Derecha Completa y Editorial) */
+.dark-content-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.service-category-tag {
+  font-family: var(--font-heading);
+  font-size: 0.8125rem;
+  font-weight: 800;
+  color: #E2B857;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 0.85rem;
+}
+
+.dark-service-title {
+  font-size: clamp(2rem, 3.2vw, 2.75rem);
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1.15;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.02em;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.dark-service-desc {
+  font-size: 1.1rem;
+  color: #CBD5E1;
+  line-height: 1.75;
+  margin-bottom: 2rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
+}
+
+/* Viñetas de Características */
+.dark-service-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1rem;
+  margin-bottom: 2.5rem;
+  width: 100%;
+}
+
+.dark-feature-tag {
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 0.55rem 1.2rem;
+  border-radius: 8px;
+}
+
+.dark-feature-tag.gold-border-tag {
+  background: rgba(226, 184, 87, 0.12);
+  border-color: rgba(226, 184, 87, 0.35);
+  color: #FADB7F;
+}
+
+.dark-service-action {
+  width: 100%;
+}
+
+.dark-service-action .btn {
+  padding: 1.15rem 2.5rem;
+  font-size: 1.05rem;
+}
+
+/* Puntos de Paginación */
+.dark-dots-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  margin-top: 2rem;
+}
+
+.dark-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dark-dot.active {
+  width: 32px;
+  border-radius: 12px;
+  background: #E2B857;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .dark-slide-card {
+    grid-template-columns: 1fr;
+    gap: 2.25rem;
+    padding: 2.75rem 2.25rem;
+    min-height: auto;
+  }
+
+  .dark-photo-wrapper {
+    height: 320px;
+  }
+}
+
+@media (max-width: 640px) {
+  .services-dark-stage {
+    gap: 0.25rem;
+  }
+
+  .dark-arrow-btn.side-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .dark-arrow-btn.side-arrow.prev {
+    left: 0.25rem;
+  }
+
+  .dark-arrow-btn.side-arrow.next {
+    right: 0.25rem;
+  }
+
+  .dark-slide-card {
+    padding: 2rem 1.25rem;
+  }
+
+  .dark-service-title {
+    font-size: 1.5rem;
+  }
+}

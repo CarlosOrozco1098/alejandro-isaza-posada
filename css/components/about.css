@@ -1,0 +1,343 @@
+/* ==========================================================================
+   SECCIÓN SOBRE LA EMPRESA — COMPOSICIÓN EDITORIAL DE DOS COLUMNAS
+   ========================================================================== */
+
+.section-about {
+  padding-top: 6rem;
+  padding-bottom: 0;
+  background-color: #FFFFFF;
+}
+
+/* Contenedor de ancho máximo 1180px */
+.about-container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Grid Principal de 2 Columnas: 45% Foto | 55% Contenido */
+.about-main-grid {
+  display: grid;
+  grid-template-columns: 45% 55%;
+  gap: 4rem;
+  align-items: center;
+  margin-bottom: 5rem;
+}
+
+/* --------------------------------------------------------------------------
+   COLUMNA IZQUIERDA: FOTOGRAFÍA (45%)
+   -------------------------------------------------------------------------- */
+.about-photo-col {
+  width: 100%;
+}
+
+.about-photo-frame {
+  width: 100%;
+  height: 520px;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #F1F5F9;
+  box-shadow: 0 16px 36px rgba(9, 26, 54, 0.1);
+  border: 1px solid #E2E8F0;
+}
+
+.about-photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.about-photo-frame:hover .about-photo-img {
+  transform: scale(1.02);
+}
+
+/* --------------------------------------------------------------------------
+   COLUMNA DERECHA: CONTENIDO CORPORATIVO (55%)
+   -------------------------------------------------------------------------- */
+.about-content-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Etiqueta superior idéntica al Hero */
+.about-tag {
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--accent-gold, #E2B857);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.about-tag::before {
+  content: '';
+  width: 18px;
+  height: 2px;
+  background-color: var(--accent-gold, #E2B857);
+}
+
+/* Titular Principal */
+.about-heading {
+  font-size: clamp(2rem, 3.2vw, 2.6rem);
+  font-weight: 800;
+  color: #091A36;
+  line-height: 1.2;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.02em;
+}
+
+/* Párrafo Principal */
+.about-lead-text {
+  font-size: 1.05rem;
+  color: #475569;
+  line-height: 1.75;
+  margin-bottom: 1.5rem;
+}
+
+/* Frase Destacada */
+.about-featured-phrase {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #091A36;
+  line-height: 1.6;
+  padding-left: 1.25rem;
+  border-left: 3px solid #E2B857;
+  margin-bottom: 2.25rem;
+}
+
+/* --------------------------------------------------------------------------
+   FILA DE INDICADORES
+   -------------------------------------------------------------------------- */
+.about-indicators-row {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid #E2E8F0;
+  width: 100%;
+}
+
+.indicator-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.indicator-value {
+  font-family: var(--font-heading);
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: #091A36;
+  line-height: 1.1;
+  margin-bottom: 0.25rem;
+}
+
+.indicator-label {
+  font-size: 0.85rem;
+  color: #64748B;
+  font-weight: 500;
+}
+
+.indicator-divider {
+  width: 1px;
+  height: 38px;
+  background-color: #E2E8F0;
+}
+
+/* --------------------------------------------------------------------------
+   FRANJA "NUESTRO COMPROMISO" (AZUL MARINO LOGO AIP Y DORADO)
+   -------------------------------------------------------------------------- */
+.about-differentials-banner {
+  width: 100%;
+  background-color: #091A36; /* Azul Marino Oficial Logo AIP */
+  position: relative;
+  overflow: hidden;
+  padding-top: 2.25rem;
+  padding-bottom: 2.25rem;
+  border-top: 1px solid rgba(226, 184, 87, 0.4);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.about-differentials-banner::before {
+  display: none;
+}
+
+/* Contenedor principal limitado y centrado */
+.about-banner-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  position: relative;
+  z-index: 2;
+  box-sizing: border-box;
+}
+
+/* Etiqueta Superior Dorada con Línea Arquitectónica */
+.banner-top-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.banner-top-tag .tag-line {
+  width: 24px;
+  height: 2px;
+  background-color: #E2B857;
+  display: block;
+}
+
+.banner-top-tag .tag-text {
+  font-family: var(--font-heading);
+  font-size: 0.8125rem; /* 13px */
+  font-weight: 700;
+  color: #E2B857;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+/* Grid de 3 columnas horizontales en desktop */
+.differentials-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3.5rem;
+  width: 100%;
+}
+
+/* Columna individual */
+.diff-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+}
+
+/* Separadores verticales sutiles en dorado metálico entre columnas (1-2 y 2-3) */
+.diff-col:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 10%;
+  right: -1.75rem;
+  width: 1px;
+  height: 80%;
+  background-color: rgba(226, 184, 87, 0.25);
+}
+
+/* Número arriba (Sólido, Dorado Arquitectónico) */
+.diff-num {
+  font-family: var(--font-heading);
+  font-size: 2.85rem; /* 45px */
+  font-weight: 800;
+  color: #E2B857;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.75rem;
+}
+
+/* Título debajo del número (Blanco puro, nítido) */
+.diff-title {
+  font-family: var(--font-heading);
+  font-size: 1.15rem; /* 18.4px */
+  font-weight: 800;
+  color: #FFFFFF;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  line-height: 1.25;
+}
+
+/* Descripción (Gris Slate claro nítido) */
+.diff-desc {
+  font-size: 0.9375rem; /* 15px */
+  font-weight: 400;
+  color: #CBD5E1;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 320px;
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE
+   -------------------------------------------------------------------------- */
+@media (max-width: 992px) {
+  .about-main-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    margin-bottom: 3.5rem;
+  }
+
+  .about-content-top {
+    order: 1;
+  }
+
+  .about-photo-col {
+    order: 2;
+  }
+
+  .about-content-bottom {
+    order: 3;
+    width: 100%;
+  }
+
+  .about-photo-frame {
+    height: 380px;
+  }
+
+  .about-indicators-row {
+    justify-content: space-between;
+  }
+
+  .differentials-row {
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-banner-container {
+    padding: 0 1.5rem;
+  }
+
+  .about-differentials-banner {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .differentials-row {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .diff-col:not(:last-child) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 2rem;
+  }
+
+  .diff-col:not(:last-child)::after {
+    display: none;
+  }
+
+  .diff-num {
+    font-size: 2.5rem;
+  }
+
+  .diff-desc {
+    max-width: 100%;
+  }
+
+  .about-indicators-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+
+  .indicator-divider {
+    display: none;
+  }
+}

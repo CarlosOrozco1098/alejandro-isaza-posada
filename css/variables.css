@@ -1,0 +1,61 @@
+/* ==========================================================================
+   VARIABLES Y TOKENS DEL SISTEMA DE DISEÑO VISUAL (TEMA CLARO ARQUITECTÓNICO)
+   Basado fielmente en el Logo de Alejandro Isaza Posada
+   ========================================================================== */
+
+:root {
+  /* Paleta Cromática Oficial Extraída del Logo "AIP" */
+  --color-primary-navy: #091A36;      /* Azul Marino Profundo "AIP" (Títulos, Header, Marca) */
+  --color-primary-navy-hover: #12284D;
+  
+  --color-steel-grey: #5A6578;       /* Gris Acero / Concreto "P" (Subtítulos, bordes, detalles) */
+  --color-steel-grey-light: #94A3B8; 
+  --color-steel-border: #E2E8F0;      /* Bordes limpios de construcción */
+
+  /* Fondos Luminosos y Arquitectónicos */
+  --bg-body: #F8FAFC;                /* Blanco plano arquitectónico suave */
+  --bg-surface-white: #FFFFFF;       /* Tarjetas de puro blanco */
+  --bg-surface-light: #F1F5F9;       /* Gris claro concreto suave */
+  --bg-navy-section: #091A36;        /* Sección oscura opcional para contraste alto */
+
+  --bg-card: #FFFFFF;
+  --bg-card-hover: #FFFFFF;
+
+  /* Acentos de Marca y Botones */
+  --accent-gold: #D97706;            /* Ámbar de seguridad industrial */
+  --accent-blue: #091A36;            /* Azul marino corporativo */
+  --accent-whatsapp: #25D366;        /* Verde oficial de WhatsApp */
+  --accent-whatsapp-hover: #128C7E;
+
+  /* Textos (Optimizados para fondo claro) */
+  --text-dark-navy: #091A36;         /* Texto principal de títulos */
+  --text-body: #334155;              /* Texto legible de párrafos */
+  --text-muted: #5A6578;             /* Texto secundario gris acero */
+  --text-white: #FFFFFF;             /* Para botones oscuros o footer */
+
+  /* Tipografía (Google Fonts: Outfit & Inter) */
+  --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Bordes y Sombras de Construcción */
+  --border-radius-sm: 6px;
+  --border-radius-md: 12px;
+  --border-radius-lg: 16px;
+  --border-radius-full: 9999px;
+
+  --border-clean: 1px solid #E2E8F0;
+  --border-navy: 1px solid rgba(9, 26, 54, 0.15);
+  --border-steel: 1px solid rgba(90, 101, 120, 0.2);
+
+  /* Sombras Elegantes y Limpias */
+  --shadow-sm: 0 2px 8px rgba(9, 26, 54, 0.05);
+  --shadow-md: 0 10px 30px rgba(9, 26, 54, 0.08);
+  --shadow-lg: 0 20px 40px rgba(9, 26, 54, 0.12);
+
+  /* Transiciones */
+  --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  --container-max: 1240px;
+  --header-height: 85px;
+}
